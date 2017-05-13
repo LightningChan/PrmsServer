@@ -1,0 +1,51 @@
+group 'com.ucas'
+version '1.0'
+
+apply plugin: 'java-library'
+apply plugin: 'war'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+webAppDirName = 'webapp'
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+    // Use jcenter for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}
+
+dependencies {
+
+    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    implementation 'com.google.guava:guava:21.0'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+    
+    compile 'javax.servlet:javax.servlet-api:3.0.1'   
+    
+    compile group: 'javax.servlet.jsp.jstl', name: 'jstl', version: '1.2'
+
+    
+    compile group: 'taglibs', name: 'standard', version: '1.1.2'
+    
+    compile 'org.springframework:spring-context:4.3.8.RELEASE'
+    compile 'org.springframework:spring-orm:4.3.8.RELEASE'
+    compile 'org.springframework:spring-web:4.3.8.RELEASE'
+    compile 'org.springframework:spring-tx:4.3.8.RELEASE'
+    compile 'org.springframework:spring-jdbc:4.3.8.RELEASE'
+    compile 'org.springframework:spring-test:4.3.8.RELEASE'
+    
+    compile 'org.hibernate:hibernate-core:5.1.5.Final'
+    compile 'org.hibernate:hibernate-entitymanager:5.1.5.Final'
+    compile 'org.hibernate:hibernate-c3p0:5.1.5.Final'
+    
+    compile 'mysql:mysql-connector-java:5.1.39'
+    
+    //logging
+    compile 'org.slf4j:slf4j-log4j12:1.7.5'
+}
+
